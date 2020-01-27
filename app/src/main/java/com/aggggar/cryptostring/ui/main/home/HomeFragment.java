@@ -3,6 +3,8 @@ package com.aggggar.cryptostring.ui.main.home;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.provider.SyncStateContract;
@@ -13,6 +15,7 @@ import android.widget.Button;
 
 import com.aggggar.cryptostring.R;
 import com.aggggar.cryptostring.ui.base.BaseFragment;
+import com.aggggar.cryptostring.ui.main.MainActivity;
 import com.aggggar.cryptostring.ui.main.crypto.CryptoFragment;
 import com.aggggar.cryptostring.utils.Constants;
 
@@ -44,6 +47,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         btnEncrypt.setOnClickListener(this);
         btnDecrypt.setOnClickListener(this);
         return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        ((MainActivity)context).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
     }
 
     @Override

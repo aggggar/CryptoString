@@ -19,6 +19,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.aggggar.cryptostring.R;
 import com.aggggar.cryptostring.ui.base.BaseFragment;
+import com.aggggar.cryptostring.ui.main.MainActivity;
 import com.aggggar.cryptostring.utils.Constants;
 
 import butterknife.BindView;
@@ -64,6 +65,7 @@ public class CryptoFragment extends BaseFragment implements View.OnClickListener
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         btnSubmit.setOnClickListener(this);
+        ((MainActivity)context).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         etText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
